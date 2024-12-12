@@ -1,0 +1,13 @@
+{
+    "format": "cloudstack",
+    "rules":
+     [{
+            "id": "1",
+            "uuid": "17d1b537-cdfc-11ec-bb74-000c29bf26e7",
+            "role": "1",
+            "role_name": "Root Admin",
+            "rule": "*",
+            "permission": "ALLOW",
+            "sort_order": 0
+        }]
+}

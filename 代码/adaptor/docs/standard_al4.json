@@ -1,0 +1,83 @@
+{
+    "format": "aliyun",
+    "standard_policy": {
+        "rules": [
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": null,
+                "resource": "*",
+                "resource_type": "*",
+                "service": "slb",
+                "type": null,
+                "class": null,
+                "action": "*",
+                "allias": null,
+                "conditon": null
+            },
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": null,
+                "resource": "*",
+                "resource_type": "Instances",
+                "service": "ecs",
+                "type": null,
+                "class": null,
+                "action": "Describe",
+                "allias": null,
+                "conditon": null
+            },
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": null,
+                "resource": "*",
+                "resource_type": "Metric*",
+                "service": "cms",
+                "type": null,
+                "class": null,
+                "action": "Query",
+                "allias": null,
+                "conditon": null
+            },
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": null,
+                "resource": "*",
+                "resource_type": "Role",
+                "service": "ram",
+                "type": null,
+                "class": null,
+                "action": "Pass",
+                "allias": null,
+                "conditon": null,
+                "condition": {
+                    "StringEquals": {
+                        "acs:Service": "slb.aliyuncs.com"
+                    }
+                }
+            },
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": null,
+                "resource": "*",
+                "resource_type": "ServiceLinkedRole",
+                "service": "ram",
+                "type": null,
+                "class": null,
+                "action": "Create",
+                "allias": null,
+                "conditon": null,
+                "condition": {
+                    "StringEquals": {
+                        "ram:ServiceName": "logdelivery.slb.aliyuncs.com"
+                    }
+                }
+            }
+        ]
+    }
+}
+

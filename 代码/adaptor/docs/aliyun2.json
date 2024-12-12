@@ -1,0 +1,18 @@
+
+{
+    "Version": "1",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "ecs:DescribeActivations",
+            "Resource": "acs:ecs:*:*:activation/*",
+            "Condition": {
+                "IpAddress": {
+                    "acs:SourceIp": [
+                        "100.2.1.1"
+                    ]
+                }
+            }
+        }
+    ]
+}

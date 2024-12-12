@@ -1,0 +1,2 @@
+r0001:(allow,admin,*)=> (compute, activate, project,*, admin_required);
+r0002:(allow,324,*)=> (compute, 123, project,*);

@@ -1,0 +1,59 @@
+{
+    "format": "aliyun",
+    "standard_policy": {
+        "rules": [
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": null,
+                "resource": "*",
+                "resource_type": "*",
+                "service": "ecs",
+                "type": null,
+                "class": null,
+                "action": "Describe",
+                "allias": null,
+                "conditon": null
+            },
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": null,
+                "resource": "*",
+                "resource_type": "*",
+                "service": "ecs",
+                "type": null,
+                "class": null,
+                "action": "List",
+                "allias": null,
+                "conditon": null
+            },
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": null,
+                "resource": "*",
+                "resource_type": "Vpcs",
+                "service": "vpc",
+                "type": null,
+                "class": null,
+                "action": "Describe",
+                "allias": null,
+                "conditon": null
+            },
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": null,
+                "resource": "*",
+                "resource_type": "VSwitches",
+                "service": "vpc",
+                "type": null,
+                "class": null,
+                "action": "Describe",
+                "allias": null,
+                "conditon": null
+            }
+        ]
+    }
+}

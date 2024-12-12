@@ -1,0 +1,29 @@
+import VueCookies from 'vue-cookies';
+Vue.use(VueCookies)
+function getCookie(name) {  //获取cookie函数
+  name = name + "=";
+  var start = document.cookie.indexOf(name),
+    value = null;
+  if (start > -1) {
+    var end = document.cookie.indexOf(";", start);
+    if (end == -1) {
+      end = document.cookie.length;
+    }
+    value = document.cookie.substring(start + name.length, end);
+  }
+  return value;
+}
+axios.defaults.withCredentials=true
+axios.interceptors.request.use(
+  function(config) {
+    config.headers['X-Requested-With'] = 'XMLHttpRequest';
+    let regex = /.*csrftoken=([^;.]*).*$/; // 用于从cookie中匹配 csrftoken值
+    console.log(document.cookie);
+    config.headers['X-CSRFToken'] =getCookie('csrftoken');
+    console.log(config);
+    return config
+  },
+  function(error) {
+    // Do something with request error
+    return Promise.reject(error);
+  });

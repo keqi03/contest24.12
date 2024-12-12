@@ -1,0 +1,105 @@
+{
+    "format": "openstack",
+    "standard_policy": {
+        "rules": [
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": "",
+                "resource": null,
+                "resource_type": "region",
+                "service": "identity",
+                "type": null,
+                "class": null,
+                "action": "get",
+                "allias": null,
+                "conditon": null,
+                "alias": ""
+            },
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": "",
+                "resource": null,
+                "resource_type": "regions",
+                "service": "identity",
+                "type": null,
+                "class": null,
+                "action": "list",
+                "allias": null,
+                "conditon": null,
+                "alias": ""
+            },
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": "role:admin or is_admin:1",
+                "resource": null,
+                "resource_type": "region",
+                "service": "identity",
+                "type": null,
+                "class": null,
+                "action": "create",
+                "allias": null,
+                "conditon": null,
+                "alias": "admin_required"
+            },
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": "role:admin or is_admin:1",
+                "resource": null,
+                "resource_type": "region",
+                "service": "identity",
+                "type": null,
+                "class": null,
+                "action": "update",
+                "allias": null,
+                "conditon": null,
+                "alias": "admin_required"
+            },
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": "role:admin or is_admin:1 or user_id:%(user_id)s",
+                "resource": null,
+                "resource_type": "region",
+                "service": "identity",
+                "type": null,
+                "class": null,
+                "action": "delete",
+                "allias": null,
+                "conditon": null,
+                "alias": "admin_or_owner"
+            },
+            {
+                "effect": "deny",
+                "attribute": null,
+                "roles": "heat_stack_user",
+                "resource": null,
+                "resource_type": null,
+                "service": "stacks",
+                "type": null,
+                "class": null,
+                "action": "create",
+                "allias": null,
+                "conditon": null,
+                "alias": ""
+            },
+            {
+                "effect": "allow",
+                "attribute": null,
+                "roles": "user_id:%(user_id)s",
+                "resource": null,
+                "resource_type": "projects",
+                "service": "identity",
+                "type": null,
+                "class": null,
+                "action": "list",
+                "allias": null,
+                "conditon": null,
+                "alias": ""
+            }
+        ]
+    }
+}
